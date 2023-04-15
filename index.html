@@ -7,11 +7,15 @@
     <audio id="myAudio" src="taxi.mp3" preload="auto">
     </audio>
 
+    <audio id="myAudio2" src="beep.mp3" preload="auto">
+    </audio>
+
     <div class="w3-display-middle w3-center">
 
 
   
-  <img src="button.png"  style="width: 75%; height: auto;" onClick="togglePlay()">
+  <img class="w3-padding" src="button.png"  style="width: 100%; height: auto;" onClick="togglePlay()">
+  <img class="w3-padding" src="button.png"  style="width: 100%; height: auto;" onClick="togglePlay2()">
   
 
 </div>
@@ -27,6 +31,22 @@ myAudio.onplaying = function() {
   isPlaying = true;
 };
 myAudio.onpause = function() {
+  isPlaying = false;
+}
+
+do {
+    var myAudio2 = document.getElementById("myAudio2");
+    var isPlaying = false;
+} while (condition);
+
+function togglePlay2() {
+  isPlaying ? myAudio2.pause() : myAudio2.play();
+};
+
+myAudio2.onplaying = function() {
+  isPlaying = true;
+};
+myAudio2.onpause = function() {
   isPlaying = false;
 }
 
